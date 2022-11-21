@@ -1,19 +1,8 @@
 {
   "Actor": {
-    "types": ["character", "npc"],
+    "types": ["character"],
     "templates": {
       "base": {
-        "health": {
-          "value": 10,
-          "min": 0,
-          "max": 10
-        },
-        "power": {
-          "value": 5,
-          "min": 0,
-          "max": 5
-        },
-        "biography": ""
       }
     },
     "character": {
@@ -43,31 +32,63 @@
           "value": 10
         }
       }
-    },
-    "npc": {
-      "templates": ["base"],
-      "cr": 0
     }
   },
   "Item": {
-    "types": ["item", "feature", "spell"],
+    "types": ["power", "armor", "weapon", "vehicle", "misc"],
     "templates": {
       "base": {
+        "name":  "",
         "description": ""
       }
     },
-    "item": {
+    "power": {
       "templates": ["base"],
-      "quantity": 1,
-      "weight": 0,
-      "formula": "d20 + @str.mod + ceil(@lvl / 2)"
+      "lvl": 0,
+      "maxlvl": 0,
+      "skill": "-",
+      "timing": "auto",
+      "difficulty": "-",
+      "target": "-",
+      "range": "-",
+      "encroach": "-",
+      "uses": "-",
+      "flavor": "-",
+      "cost": 0
+
     },
-    "feature": {
-      "templates": ["base"]
+    "armor": {
+      "templates": [ "base" ],
+      "dodge": 0,
+      "initiative": 0,
+      "armor": 0,
+      "procure": 0,
+      "stock": 0,
+      "armorequipped": false
     },
-    "spell": {
-      "templates": ["base"],
-      "spellLevel": 1
+    "weapon": {
+      "templates": [ "base" ],
+      "type": "melee",
+      "skill": "-",
+      "accuracy": 0,
+      "power": 0,
+      "guard": 0,
+      "range": 0,
+      "procure": 0,
+      "stock": 0,
+      "weaponequipped": false,
+      "shieldequipped": false
+    },
+    "vehicle": {
+      "armor": 0,
+      "initiative": 0,
+      "dash": 0,
+      "rideskill": 0,
+      "procure": 0,
+      "stock": 0
+    },
+    "misc": {
+      "templates": [ "base" ]
     }
   }
 }
