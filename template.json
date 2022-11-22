@@ -6,36 +6,182 @@
       }
     },
     "character": {
-      "templates": ["base"],
-      "attributes": {
-        "level": {
-          "value": 1
+      "templates": [ "base" ],
+      "renegade": {
+        "breed": {
+          "value": ""
+        },
+        "syndrome": {
+          "value": ""
+        },
+        "bodymod": {
+          "value": 0
+        },
+        "sensemod": {
+          "value": 0
+        },
+        "mindmod": {
+          "value": 0
+        },
+        "socialmod": {
+          "value": 0
         }
       },
-      "abilities": {
-        "str": {
-          "value": 10
+      "stats": {
+        "Body": {
+          "value": 0
         },
-        "dex": {
-          "value": 10
+        "Sense": {
+          "value": 0
         },
-        "con": {
-          "value": 10
+        "Mind": {
+          "value": 0
         },
-        "int": {
-          "value": 10
-        },
-        "wis": {
-          "value": 10
-        },
-        "cha": {
-          "value": 10
+        "Social": {
+          "value": 0
         }
-      }
+      },
+      "skills": {
+        "melee": {
+          "value": 0
+        },
+        "ranged": {
+          "value": 0
+        },
+        "rc": {
+          "value": 0
+        },
+        "negotiate": {
+          "value": 0
+        },
+        "dodge": {
+          "value": 0
+        },
+        "perception": {
+          "value": 0
+        },
+        "will": {
+          "value": 0
+        },
+        "procure": {
+          "value": 0
+        },
+        "ride1": {
+          "name": "",
+          "value": 0
+        },
+        "art1": {
+          "name": "",
+          "value": 0
+        },
+        "knowledge1": {
+          "name": "",
+          "value": 0
+        },
+        "info1": {
+          "name": "",
+          "value": 0
+        },
+        "ride2": {
+          "name": "",
+          "value": 0
+        },
+        "art2": {
+          "name": "",
+          "value": 0
+        },
+        "knowledge2": {
+          "name": "",
+          "value": 0
+        },
+        "info2": {
+          "name": "",
+          "value": 0
+        },
+        "ride3": {
+          "name": "",
+          "value": 0
+        },
+        "art3": {
+          "name": "",
+          "value": 0
+        },
+        "knowledge3": {
+          "name": "",
+          "value": 0
+        },
+        "info3": {
+          "name": "",
+          "value": 0
+        }
+      },
+      "derived": {
+        "health": {
+          "value": 0
+        },
+        "stock": {
+          "value": 0
+        },
+        "savings": {
+          "value": 0
+        }
+      },
+      "doomstats": {
+        "mindoom": {
+          "value": 0
+        }
+      },
+      "doom": {
+        "value": 0
+      },
+      "itemstats": {
+        "initiative": {
+          "value": 0
+        },
+        "accuracy": {
+          "value": 0
+        },
+        "power": {
+          "value": 0
+        },
+        "armor": {
+          "value": 0
+        },
+        "guard": {
+          "value": 0
+        },
+        "dodge": {
+          "value": 0
+        }
+      },
+      "characteristics": {
+        "name": "",
+        "age": "",
+        "height": "",
+        "build": "",
+        "gender": ""
+      },
+      "work_cover": {
+        "work": {
+          "name": "",
+          "description": "",
+          "benefits": ""
+        },
+        "cover": {
+          "name": "",
+          "description": "",
+          "benefits": ""
+        }
+      },
+      "impulse": {
+        "impulse": "",
+        "awakening": ""
+      },
+      "bonds": ""
     }
   },
   "Item": {
-    "types": ["power", "armor", "weapon", "vehicle", "misc"],
+    "types": ["power", "armor", "weapon", "vehicle", "lois","traitlois","misc"],
     "templates": {
       "base": {
         "name":  "",
@@ -86,6 +232,20 @@
       "rideskill": 0,
       "procure": 0,
       "stock": 0
+    },
+    "lois": {
+      "name": "",
+      "relationship": "",
+      "positive": "",
+      "negative": "",
+      "primary": "",
+      "loistype": ""
+    },
+    "traitlois": {
+      "name": "",
+      "flavor": "",
+      "description": "",
+      "effects": ""
     },
     "misc": {
       "templates": [ "base" ]
