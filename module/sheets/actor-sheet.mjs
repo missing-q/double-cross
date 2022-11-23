@@ -19,7 +19,7 @@ export class Double_CrossActorSheet extends ActorSheet {
 
   /** @override */
   get template() {
-    return `systems/double_cross/templates/actor/actor-${this.actor.type}-sheet.html`;
+    return `systems/double_cross/templates/actor/actor-character-sheet.html`;
   }
 
   /* -------------------------------------------- */
@@ -39,22 +39,11 @@ export class Double_CrossActorSheet extends ActorSheet {
     context.system = actorData.system;
     context.flags = actorData.flags;
 
-    // Prepare character data and items.
-    if (actorData.type == 'character') {
-      this._prepareItems(context);
-      this._prepareCharacterData(context);
-    }
-
-    // Prepare NPC data and items.
-    if (actorData.type == 'npc') {
-      this._prepareItems(context);
-    }
+    this._prepareItems(context);
+    this._prepareCharacterData(context);
 
     // Add roll data for TinyMCE editors.
     context.rollData = context.actor.getRollData();
-
-    // Prepare active effects
-    context.effects = prepareActiveEffectCategories(this.actor.effects);
 
     return context;
   }
@@ -68,8 +57,8 @@ export class Double_CrossActorSheet extends ActorSheet {
    */
   _prepareCharacterData(context) {
     // Handle ability scores.
-    for (let [k, v] of Object.entries(context.system.abilities)) {
-      v.label = game.i18n.localize(CONFIG.BOILERPLATE.abilities[k]) ?? k;
+    for (let [k, v] of Object.entries(context.system.stats)) {
+      v.label = game.i18n.localize(CONFIG.BOILERPLATE.stats[k]) ?? k;
     }
   }
 
@@ -82,44 +71,42 @@ export class Double_CrossActorSheet extends ActorSheet {
    */
   _prepareItems(context) {
     // Initialize containers.
-    const gear = [];
-    const features = [];
-    const spells = {
-      0: [],
-      1: [],
-      2: [],
-      3: [],
-      4: [],
-      5: [],
-      6: [],
-      7: [],
-      8: [],
-      9: []
-    };
+    const powers = [];
+    const armor = [];
+    const weapons = [];
+    const vehicles = [];
+    const lois = [];
+    const traitlois = [];
+    const misc = [];
 
     // Iterate through items, allocating to containers
     for (let i of context.items) {
       i.img = i.img || DEFAULT_TOKEN;
-      // Append to gear.
-      if (i.type === 'item') {
-        gear.push(i);
-      }
-      // Append to features.
-      else if (i.type === 'feature') {
-        features.push(i);
-      }
-      // Append to spells.
-      else if (i.type === 'spell') {
-        if (i.system.spellLevel != undefined) {
-          spells[i.system.spellLevel].push(i);
-        }
+      if (i.type === 'power') {
+        powers.push(i);
+      } else if (i.type === 'armor') {
+        armor.push(i);
+      } else if (i.type === 'weapon') {
+        weapons.push(i);
+      } else if (i.type === 'vehicle') {
+        vehicles.push(i);
+      } else if (i.type === 'lois') {
+        lois.push(i);
+      } else if (i.type === 'traitlois') {
+        traitlois.push(i);
+      } else if (i.type === 'misc') {
+        misc.push(i);
       }
     }
 
     // Assign and return
-    context.gear = gear;
-    context.features = features;
-    context.spells = spells;
+    context.powers = powers;
+    context.armor = armor;
+    context.weapons = weapons;
+    context.vehicles = vehicles;
+    context.lois = lois;
+    context.traitlois = traitlois;
+    context.misc = misc;
   }
 
   /* -------------------------------------------- */
@@ -151,7 +138,7 @@ export class Double_CrossActorSheet extends ActorSheet {
     });
 
     // Active Effect management
-    html.find(".effect-control").click(ev => onManageActiveEffect(ev, this.actor));
+    //html.find(".effect-control").click(ev => onManageActiveEffect(ev, this.actor));
 
     // Rollable abilities.
     html.find('.rollable').click(this._onRoll.bind(this));
