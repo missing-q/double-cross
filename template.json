@@ -28,16 +28,16 @@
         }
       },
       "stats": {
-        "Body": {
+        "body": {
           "value": 0
         },
-        "Sense": {
+        "sense": {
           "value": 0
         },
-        "Mind": {
+        "mind": {
           "value": 0
         },
-        "Social": {
+        "social": {
           "value": 0
         }
       },
@@ -117,10 +117,14 @@
       },
       "derived": {
         "health": {
-          "value": 0
+          "current":{
+            "value":0
+          }
         },
         "stock": {
-          "value": 0
+          "current":{
+            "value":0
+          }
         },
         "savings": {
           "value": 0

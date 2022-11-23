@@ -31,39 +31,48 @@ export class Double_CrossActor extends Actor {
   prepareDerivedData() {
     const actorData = this;
     const systemData = actorData.system;
-    const flags = actorData.flags.double-cross || {};
+    const flags = actorData.flags.double_cross || {};
+    const data = actorData.data;
 
-    // Make separate methods for each Actor type (character, npc, etc.) to keep
-    // things organized.
-    this._prepareCharacterData(actorData);
-    this._prepareNpcData(actorData);
-  }
-
-  /**
-   * Prepare Character type specific data
-   */
-  _prepareCharacterData(actorData) {
-    if (actorData.type !== 'character') return;
-
-    // Make modifications to data here. For example:
-    const systemData = actorData.system;
-
-    // Loop through ability scores, and add their modifiers to our sheet output.
-    for (let [key, ability] of Object.entries(systemData.abilities)) {
-      // Calculate the modifier using d20 rules.
-      ability.mod = Math.floor((ability.value - 10) / 2);
+    //derived stats
+    //hp max value
+    data.derived.health.max.value = ((2 * data.stats.body.value) + data.stats.mind.value + 20);
+    //stock max value
+    data.derived.stock.max.value = ((2 * data.stats.social.value) + (2 * data.skills.procure.value));
+    //initiative
+    data.derived.initiative.value = ((2 * data.stats.sense.value) + ( data.stats.mind.value));
+    //move
+    data.derived.move.value = (data.derived.initiative.value + 5);
+    //dash
+    data.derived.dash.value = ((data.derived.initiative.value + 5) * 2);
+    //doom level
+    if (data.doom.value >= 160){
+      data.doomstats.doomlvl.value = 2;
+    } else if (data.doom.value >= 100){
+      data.doomstats.doomlvl.value = 1;
+    } else {
+      data.doomstats.doomlvl.value = 0;
     }
-  }
-
-  /**
-   * Prepare NPC type specific data.
-   */
-  _prepareNpcData(actorData) {
-    if (actorData.type !== 'npc') return;
-
-    // Make modifications to data here. For example:
-    const systemData = actorData.system;
-    systemData.xp = (systemData.cr * systemData.cr) * 100;
+    //doom dice
+    if (data.doom.value >= 300){
+      data.doomstats.doomdice.value = 8;
+    } else if (data.doom.value >= 240){
+      data.doomstats.doomdice.value = 7;
+    } else if (data.doom.value >= 200){
+      data.doomstats.doomdice.value = 6;
+    } else if (data.doom.value >= 160){
+      data.doomstats.doomdice.value = 5;
+    } else if (data.doom.value >= 130){
+      data.doomstats.doomdice.value = 4;
+    } else if (data.doom.value >= 100){
+      data.doomstats.doomdice.value = 3;
+    } else if (data.doom.value >= 80){
+      data.doomstats.doomdice.value = 2;
+    } else if (data.doom.value >= 60){
+      data.doomstats.doomdice.value = 1;
+    } else {
+      data.doomstats.doomdice.value = 0;
+    }
   }
 
   /**
@@ -74,7 +83,6 @@ export class Double_CrossActor extends Actor {
 
     // Prepare character roll data.
     this._getCharacterRollData(data);
-    this._getNpcRollData(data);
 
     return data;
   }
@@ -83,10 +91,10 @@ export class Double_CrossActor extends Actor {
    * Prepare character roll data.
    */
   _getCharacterRollData(data) {
-    if (this.type !== 'character') return;
 
     // Copy the ability scores to the top level, so that rolls can use
     // formulas like `@str.mod + 4`.
+    /*
     if (data.abilities) {
       for (let [k, v] of Object.entries(data.abilities)) {
         data[k] = foundry.utils.deepClone(v);
@@ -96,16 +104,7 @@ export class Double_CrossActor extends Actor {
     // Add level for easier access, or fall back to 0.
     if (data.attributes.level) {
       data.lvl = data.attributes.level.value ?? 0;
-    }
-  }
-
-  /**
-   * Prepare NPC roll data.
-   */
-  _getNpcRollData(data) {
-    if (this.type !== 'npc') return;
-
-    // Process additional NPC data here.
+    }*/
   }
 
 }

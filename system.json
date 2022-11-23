@@ -1,5 +1,5 @@
 {
-  "id": "double-cross",
+  "id": "double_cross",
   "title": "Double_Cross",
   "description": "The Double_Cross system for FoundryVTT!",
   "version": "1.2.0",
@@ -11,8 +11,8 @@
   "authors": [{
     "name": "Asacolips"
   }],
-  "esmodules": ["module/double-cross.mjs"],
-  "styles": ["css/double-cross.css"],
+  "esmodules": ["module/double_cross.mjs"],
+  "styles": ["css/double_cross.css"],
   "scripts": [],
   "packs": [],
   "languages": [

@@ -1,5 +1,5 @@
 {
-  "name": "double-cross",
+  "name": "double_cross",
   "version": "1.0.0",
   "description": "CSS compiler for the Double_Cross system",
   "scripts": {

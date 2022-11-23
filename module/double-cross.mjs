@@ -16,7 +16,7 @@ Hooks.once('init', async function() {
 
   // Add utility classes to the global game object so that they're more easily
   // accessible in global contexts.
-  game.double-cross = {
+  game.double_cross = {
     Double_CrossActor,
     Double_CrossItem,
     rollItemMacro
@@ -40,9 +40,9 @@ Hooks.once('init', async function() {
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("double-cross", Double_CrossActorSheet, { makeDefault: true });
+  Actors.registerSheet("double_cross", Double_CrossActorSheet, { makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("double-cross", Double_CrossItemSheet, { makeDefault: true });
+  Items.registerSheet("double_cross", Double_CrossItemSheet, { makeDefault: true });
 
   // Preload Handlebars templates.
   return preloadHandlebarsTemplates();
@@ -97,7 +97,7 @@ async function createItemMacro(data, slot) {
   const item = await Item.fromDropData(data);
 
   // Create the macro command using the uuid.
-  const command = `game.double-cross.rollItemMacro("${data.uuid}");`;
+  const command = `game.double_cross.rollItemMacro("${data.uuid}");`;
   let macro = game.macros.find(m => (m.name === item.name) && (m.command === command));
   if (!macro) {
     macro = await Macro.create({
@@ -105,7 +105,7 @@ async function createItemMacro(data, slot) {
       type: "script",
       img: item.img,
       command: command,
-      flags: { "double-cross.itemMacro": true }
+      flags: { "double_cross.itemMacro": true }
     });
   }
   game.user.assignHotbarMacro(macro, slot);

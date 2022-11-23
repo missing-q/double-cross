@@ -9,8 +9,8 @@ export class Double_CrossActorSheet extends ActorSheet {
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ["double-cross", "sheet", "actor"],
-      template: "systems/double-cross/templates/actor/actor-sheet.html",
+      classes: ["double_cross", "sheet", "actor"],
+      template: "systems/double_cross/templates/actor/actor-sheet.html",
       width: 600,
       height: 600,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "features" }]
@@ -19,7 +19,7 @@ export class Double_CrossActorSheet extends ActorSheet {
 
   /** @override */
   get template() {
-    return `systems/double-cross/templates/actor/actor-${this.actor.type}-sheet.html`;
+    return `systems/double_cross/templates/actor/actor-${this.actor.type}-sheet.html`;
   }
 
   /* -------------------------------------------- */
