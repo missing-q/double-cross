@@ -2,7 +2,7 @@
  * Extend the basic Item with some very simple modifications.
  * @extends {Item}
  */
-export class Double-CrossItem extends Item {
+export class Double_CrossItem extends Item {
   /**
    * Augment the basic Item data model with additional dynamic data.
    */

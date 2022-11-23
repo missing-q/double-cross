@@ -1,7 +1,7 @@
 {
   "id": "double-cross",
-  "title": "Double-Cross",
-  "description": "The Double-Cross system for FoundryVTT!",
+  "title": "Double_Cross",
+  "description": "The Double_Cross system for FoundryVTT!",
   "version": "1.2.0",
   "compatibility": {
     "minimum": 10,

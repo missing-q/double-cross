@@ -2,7 +2,7 @@
  * Extend the base Actor document by defining a custom roll data structure which is ideal for the Simple system.
  * @extends {Actor}
  */
-export class Double-CrossActor extends Actor {
+export class Double_CrossActor extends Actor {
 
   /** @override */
   prepareData() {

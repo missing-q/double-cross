@@ -1,7 +1,7 @@
 {
   "name": "double-cross",
   "version": "1.0.0",
-  "description": "CSS compiler for the Double-Cross system",
+  "description": "CSS compiler for the Double_Cross system",
   "scripts": {
     "build": "gulp build",
     "compile": "gulp css",

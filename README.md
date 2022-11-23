@@ -1,4 +1,4 @@
-# Double-Cross System
+# Double_Cross System
 
 ![Foundry v10](https://img.shields.io/badge/foundry-v10-green)
 
@@ -6,17 +6,17 @@ This system is a double-cross system that you can use as a starting point for bu
 
 ## Usage
 
-Before installing this system, you should rename any files that have `double-cross` in their filename to use whatever machine-safe name your system needs, such as `adnd2e` if you were building a system for 2nd edition Advanced Dungeons & Dragons. In addition, you should search through the files for `double-cross` and `Double-Cross` and do the same for those, replacing them with appropriate names for your system.
+Before installing this system, you should rename any files that have `double-cross` in their filename to use whatever machine-safe name your system needs, such as `adnd2e` if you were building a system for 2nd edition Advanced Dungeons & Dragons. In addition, you should search through the files for `double-cross` and `Double_Cross` and do the same for those, replacing them with appropriate names for your system.
 
 ### System Generator
 
 This project is also available as generator that can be run with npm: https://www.npmjs.com/package/generator-foundry
 
-### Vue 3 Double-Cross
+### Vue 3 Double_Cross
 
 Alternatively, there's another build of this system that supports using Vue 3 components (ES module build target) for character sheet templates.
 
-Head over to the [Vue3Double-Cross System](https://gitlab.com/asacolips-projects/foundry-mods/vue3double-cross) repo if you're interested in using Vue!
+Head over to the [Vue3Double_Cross System](https://gitlab.com/asacolips-projects/foundry-mods/vue3double-cross) repo if you're interested in using Vue!
 
 ### Tutorial
 

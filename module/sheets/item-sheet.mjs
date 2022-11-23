@@ -2,7 +2,7 @@
  * Extend the basic ItemSheet with some very simple modifications
  * @extends {ItemSheet}
  */
-export class Double-CrossItemSheet extends ItemSheet {
+export class Double_CrossItemSheet extends ItemSheet {
 
   /** @override */
   static get defaultOptions() {

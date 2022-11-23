@@ -1,9 +1,9 @@
 // Import document classes.
-import { Double-CrossActor } from "./documents/actor.mjs";
-import { Double-CrossItem } from "./documents/item.mjs";
+import { Double_CrossActor } from "./documents/actor.mjs";
+import { Double_CrossItem } from "./documents/item.mjs";
 // Import sheet classes.
-import { Double-CrossActorSheet } from "./sheets/actor-sheet.mjs";
-import { Double-CrossItemSheet } from "./sheets/item-sheet.mjs";
+import { Double_CrossActorSheet } from "./sheets/actor-sheet.mjs";
+import { Double_CrossItemSheet } from "./sheets/item-sheet.mjs";
 // Import helper/utility classes and constants.
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
 import { BOILERPLATE } from "./helpers/config.mjs";
@@ -17,8 +17,8 @@ Hooks.once('init', async function() {
   // Add utility classes to the global game object so that they're more easily
   // accessible in global contexts.
   game.double-cross = {
-    Double-CrossActor,
-    Double-CrossItem,
+    Double_CrossActor,
+    Double_CrossItem,
     rollItemMacro
   };
 
@@ -35,14 +35,14 @@ Hooks.once('init', async function() {
   };
 
   // Define custom Document classes
-  CONFIG.Actor.documentClass = Double-CrossActor;
-  CONFIG.Item.documentClass = Double-CrossItem;
+  CONFIG.Actor.documentClass = Double_CrossActor;
+  CONFIG.Item.documentClass = Double_CrossItem;
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("double-cross", Double-CrossActorSheet, { makeDefault: true });
+  Actors.registerSheet("double-cross", Double_CrossActorSheet, { makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("double-cross", Double-CrossItemSheet, { makeDefault: true });
+  Items.registerSheet("double-cross", Double_CrossItemSheet, { makeDefault: true });
 
   // Preload Handlebars templates.
   return preloadHandlebarsTemplates();
