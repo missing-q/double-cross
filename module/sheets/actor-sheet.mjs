@@ -57,9 +57,10 @@ export class Double_CrossActorSheet extends ActorSheet {
    */
   _prepareCharacterData(context) {
     // Handle ability scores.
+    /*
     for (let [k, v] of Object.entries(context.system.stats)) {
       v.label = game.i18n.localize(CONFIG.BOILERPLATE.stats[k]) ?? k;
-    }
+    }*/
   }
 
   /**

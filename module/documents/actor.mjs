@@ -32,46 +32,45 @@ export class Double_CrossActor extends Actor {
     const actorData = this;
     const systemData = actorData.system;
     const flags = actorData.flags.double_cross || {};
-    const data = actorData.data;
 
     //derived stats
     //hp max value
-    data.derived.health.max.value = ((2 * data.stats.body.value) + data.stats.mind.value + 20);
+    systemData.derived.health.max.value = ((2 * systemData.stats.body.value) + systemData.stats.mind.value + 20);
     //stock max value
-    data.derived.stock.max.value = ((2 * data.stats.social.value) + (2 * data.skills.procure.value));
+    systemData.derived.stock.max.value = ((2 * systemData.stats.social.value) + (2 * systemData.skills.procure.value));
     //initiative
-    data.derived.initiative.value = ((2 * data.stats.sense.value) + ( data.stats.mind.value));
+    systemData.derived.initiative.value = ((2 * systemData.stats.sense.value) + ( systemData.stats.mind.value));
     //move
-    data.derived.move.value = (data.derived.initiative.value + 5);
+    systemData.derived.move.value = (systemData.derived.initiative.value + 5);
     //dash
-    data.derived.dash.value = ((data.derived.initiative.value + 5) * 2);
+    systemData.derived.dash.value = ((systemData.derived.initiative.value + 5) * 2);
     //doom level
-    if (data.doom.value >= 160){
-      data.doomstats.doomlvl.value = 2;
-    } else if (data.doom.value >= 100){
-      data.doomstats.doomlvl.value = 1;
+    if (systemData.doom.value >= 160){
+      systemData.doomstats.doomlvl.value = 2;
+    } else if (systemData.doom.value >= 100){
+      systemData.doomstats.doomlvl.value = 1;
     } else {
-      data.doomstats.doomlvl.value = 0;
+      systemData.doomstats.doomlvl.value = 0;
     }
     //doom dice
-    if (data.doom.value >= 300){
-      data.doomstats.doomdice.value = 8;
-    } else if (data.doom.value >= 240){
-      data.doomstats.doomdice.value = 7;
-    } else if (data.doom.value >= 200){
-      data.doomstats.doomdice.value = 6;
-    } else if (data.doom.value >= 160){
-      data.doomstats.doomdice.value = 5;
-    } else if (data.doom.value >= 130){
-      data.doomstats.doomdice.value = 4;
-    } else if (data.doom.value >= 100){
-      data.doomstats.doomdice.value = 3;
-    } else if (data.doom.value >= 80){
-      data.doomstats.doomdice.value = 2;
-    } else if (data.doom.value >= 60){
-      data.doomstats.doomdice.value = 1;
+    if (systemData.doom.value >= 300){
+      systemData.doomstats.doomdice.value = 8;
+    } else if (systemData.doom.value >= 240){
+      systemData.doomstats.doomdice.value = 7;
+    } else if (systemData.doom.value >= 200){
+      systemData.doomstats.doomdice.value = 6;
+    } else if (systemData.doom.value >= 160){
+      systemData.doomstats.doomdice.value = 5;
+    } else if (systemData.doom.value >= 130){
+      systemData.doomstats.doomdice.value = 4;
+    } else if (systemData.doom.value >= 100){
+      systemData.doomstats.doomdice.value = 3;
+    } else if (systemData.doom.value >= 80){
+      systemData.doomstats.doomdice.value = 2;
+    } else if (systemData.doom.value >= 60){
+      systemData.doomstats.doomdice.value = 1;
     } else {
-      data.doomstats.doomdice.value = 0;
+      systemData.doomstats.doomdice.value = 0;
     }
   }
 
