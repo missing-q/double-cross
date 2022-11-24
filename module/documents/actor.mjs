@@ -35,42 +35,42 @@ export class Double_CrossActor extends Actor {
 
     //derived stats
     //hp max value
-    systemData.derived.health.max.value = ((2 * systemData.stats.body.value) + systemData.stats.mind.value + 20);
+    systemData.derived.health.max = ((2 * systemData.stats.body.value) + systemData.stats.mind.value + 20);
     //stock max value
-    systemData.derived.stock.max.value = ((2 * systemData.stats.social.value) + (2 * systemData.skills.procure.value));
+    systemData.derived.stock.max = ((2 * systemData.stats.social.value) + (2 * systemData.skills.procure.value));
     //initiative
-    systemData.derived.initiative.value = ((2 * systemData.stats.sense.value) + ( systemData.stats.mind.value));
+    systemData.derived.initiative = ((2 * systemData.stats.sense.value) + ( systemData.stats.mind.value));
     //move
-    systemData.derived.move.value = (systemData.derived.initiative.value + 5);
+    systemData.derived.move = (systemData.derived.initiative.value + 5);
     //dash
-    systemData.derived.dash.value = ((systemData.derived.initiative.value + 5) * 2);
+    systemData.derived.dash = ((systemData.derived.initiative.value + 5) * 2);
     //doom level
-    if (systemData.doom.value >= 160){
-      systemData.doomstats.doomlvl.value = 2;
-    } else if (systemData.doom.value >= 100){
-      systemData.doomstats.doomlvl.value = 1;
+    if (systemData.doom >= 160){
+      systemData.doomstats.doomlvl = 2;
+    } else if (systemData.doom >= 100){
+      systemData.doomstats.doomlvl = 1;
     } else {
-      systemData.doomstats.doomlvl.value = 0;
+      systemData.doomstats.doomlvl = 0;
     }
     //doom dice
-    if (systemData.doom.value >= 300){
-      systemData.doomstats.doomdice.value = 8;
+    if (systemData.doom >= 300){
+      systemData.doomstats.doomdice = 8;
     } else if (systemData.doom.value >= 240){
-      systemData.doomstats.doomdice.value = 7;
+      systemData.doomstats.doomdice = 7;
     } else if (systemData.doom.value >= 200){
-      systemData.doomstats.doomdice.value = 6;
+      systemData.doomstats.doomdice = 6;
     } else if (systemData.doom.value >= 160){
-      systemData.doomstats.doomdice.value = 5;
+      systemData.doomstats.doomdice = 5;
     } else if (systemData.doom.value >= 130){
-      systemData.doomstats.doomdice.value = 4;
+      systemData.doomstats.doomdice = 4;
     } else if (systemData.doom.value >= 100){
-      systemData.doomstats.doomdice.value = 3;
+      systemData.doomstats.doomdice = 3;
     } else if (systemData.doom.value >= 80){
-      systemData.doomstats.doomdice.value = 2;
+      systemData.doomstats.doomdice = 2;
     } else if (systemData.doom.value >= 60){
-      systemData.doomstats.doomdice.value = 1;
+      systemData.doomstats.doomdice = 1;
     } else {
-      systemData.doomstats.doomdice.value = 0;
+      systemData.doomstats.doomdice = 0;
     }
   }
 
