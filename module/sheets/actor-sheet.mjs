@@ -200,9 +200,22 @@ export class Double_CrossActorSheet extends ActorSheet {
     };
     // Remove the type from the dataset since it's in the itemData.type prop.
     delete itemData.system["type"];
-    console.log(this.actor);
-    console.log(itemData)
-    console.log(this)
+    //console.log(this.actor);
+    //console.log(itemData)
+    //console.log(this)
+    //console.log(this.actor.items)
+
+    //syndrome checking
+    let syncount = 0;
+    this.actor.items.toObject().forEach(item => {
+      if (item.type == "syndrome"){
+        syncount++;
+      }
+    })
+    if ((syncount == 3) && (type == "syndrome")){
+      return;
+    }
+    
     return await Item.create(itemData, {parent: this.actor});
   }
 
