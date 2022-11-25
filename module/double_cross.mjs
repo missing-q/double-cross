@@ -24,6 +24,27 @@ Hooks.once('init', async function() {
 
   // Add custom constants for configuration.
   CONFIG.BOILERPLATE = BOILERPLATE;
+  CONFIG.breeds = {
+    'fullbreed': 'Fullbreed',
+    'halfbreed': 'Halfbreed',
+    'tribreed': 'Tribreed'
+  }
+  CONFIG.syndromelist = {
+    '-': '-',
+    'angelhalo': 'Angel Halo',
+    'balor': 'Balor',
+    'blackdog': 'Black Dog',
+    'bramstoker': 'Bram Stoker',
+    'chimaera': 'Chimaera',
+    'exile': 'Exile',
+    'hanuman': 'Hanuman',
+    'morpheus': 'Morpheus',
+    'neumann': 'Neumann',
+    'orcus': 'Orcus',
+    'salamandra': 'Salamandra',
+    'solaris': 'Solaris',
+    'ouroboros': 'Ouroboros'
+  }
 
   /**
    * Set an initiative formula for the system

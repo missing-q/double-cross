@@ -7,9 +7,9 @@
   return loadTemplates([
 
     // Actor partials.
-    "systems/double_cross/templates/actor/parts/actor-features.html",
     "systems/double_cross/templates/actor/parts/actor-items.html",
-    "systems/double_cross/templates/actor/parts/actor-spells.html",
+    "systems/double_cross/templates/actor/parts/actor-powers.html",
+    "systems/double_cross/templates/actor/parts/actor-syndromes.html",
     "systems/double_cross/templates/actor/parts/actor-effects.html",
   ]);
 };

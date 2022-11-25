@@ -45,6 +45,8 @@ export class Double_CrossItemSheet extends ItemSheet {
     // Add the actor's data to context.data for easier access, as well as flags.
     context.system = itemData.system;
     context.flags = itemData.flags;
+    context.syndromelist = CONFIG.syndromelist;
+    //console.log(context);
 
     return context;
   }

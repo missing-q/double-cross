@@ -13,7 +13,7 @@ export class Double_CrossActorSheet extends ActorSheet {
       template: "systems/double_cross/templates/actor/actor-sheet.html",
       width: 600,
       height: 600,
-      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "features" }]
+      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "data" }]
     });
   }
 
@@ -44,7 +44,12 @@ export class Double_CrossActorSheet extends ActorSheet {
 
     // Add roll data for TinyMCE editors.
     context.rollData = context.actor.getRollData();
-
+    context.breeds = CONFIG.breeds;
+    //context.syndromelist = CONFIG.syndromelist;
+    //console.log("hiii!!");
+    //console.log(context.breeds);
+    //console.log(context.syndromelist);
+    console.log(context);
     return context;
   }
 
@@ -78,6 +83,7 @@ export class Double_CrossActorSheet extends ActorSheet {
     const vehicles = [];
     const lois = [];
     const traitlois = [];
+    const syndrome = [];
     const misc = [];
 
     // Iterate through items, allocating to containers
@@ -95,6 +101,10 @@ export class Double_CrossActorSheet extends ActorSheet {
         lois.push(i);
       } else if (i.type === 'traitlois') {
         traitlois.push(i);
+      } else if (i.type === 'syndrome'){
+        if (syndrome.length <= 3){
+          syndrome.push(i);
+        }
       } else if (i.type === 'misc') {
         misc.push(i);
       }
@@ -107,6 +117,7 @@ export class Double_CrossActorSheet extends ActorSheet {
     context.vehicles = vehicles;
     context.lois = lois;
     context.traitlois = traitlois;
+    context.syndrome = syndrome;
     context.misc = misc;
   }
 
@@ -133,9 +144,18 @@ export class Double_CrossActorSheet extends ActorSheet {
     // Delete Inventory Item
     html.find('.item-delete').click(ev => {
       const li = $(ev.currentTarget).parents(".item");
+      console.log(li);
       const item = this.actor.items.get(li.data("itemId"));
       item.delete();
       li.slideUp(200, () => this.render(false));
+    });
+
+    // Edit an Item's values from the Actor Sheet
+    html.find('.syn-dropdown').change(ev =>{
+      console.log("Hi we're here!! smile")
+      const id = $(ev.currentTarget).attr("target-id");
+      const target = $(ev.currentTarget).attr("target-name");
+      if (id) this.actor.items.get(id).update({[target]: ev.target.value});
     });
 
     // Active Effect management
@@ -168,17 +188,21 @@ export class Double_CrossActorSheet extends ActorSheet {
     // Grab any data associated with this control.
     const data = duplicate(header.dataset);
     // Initialize a default name.
-    const name = `New ${type.capitalize()}`;
+    let name = `New ${type.capitalize()}`;
+    if (type == 'syndrome'){
+      name = '-';
+    }
     // Prepare the item object.
     const itemData = {
       name: name,
       type: type,
-      system: data
+      system: data,
     };
     // Remove the type from the dataset since it's in the itemData.type prop.
     delete itemData.system["type"];
-
-    // Finally, create the item!
+    console.log(this.actor);
+    console.log(itemData)
+    console.log(this)
     return await Item.create(itemData, {parent: this.actor});
   }
 

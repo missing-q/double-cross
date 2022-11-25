@@ -80,15 +80,20 @@
         {{!-- For the main features list, span the right two columns --}}
         <section class="main grid-span-2">
           {{!-- This is a Handlebars partial. They're stored in the `/parts` folder next to this sheet, and defined in module/helpers/templates.mjs --}}
-          {{> "systems/double_cross/templates/actor/parts/actor-features.html"}}
+          
         </section>
         -->
-        <section class="main grid-span-6">
-          <label for="system.renegade.breed.value" class="resource-label flexlarge align-left" data-label="{{system.renegade.breed.value}}">Breed</label>
-          <input type="text" name="system.renegade.breed.value" value="{{renegade.breed.value}}" data-dtype="String"/>
+        <section class="main grid-span-7">
+          {{> "systems/double_cross/templates/actor/parts/actor-syndromes.html"}}
         </section>
+        
 
       </section>
+    </div>
+
+    {{!-- Owned Spells Tab --}}
+    <div class="tab spells" data-group="primary" data-tab="powers">
+      {{> "systems/double_cross/templates/actor/parts/actor-powers.html"}}
     </div>
 
     {{!-- Biography Tab --}}
@@ -100,11 +105,6 @@
     {{!-- Owned Items Tab --}}
     <div class="tab items" data-group="primary" data-tab="items">
        {{> "systems/double_cross/templates/actor/parts/actor-items.html"}}
-    </div>
-
-    {{!-- Owned Spells Tab --}}
-    <div class="tab spells" data-group="primary" data-tab="spells">
-      {{> "systems/double_cross/templates/actor/parts/actor-spells.html"}}
     </div>
 
     {{!-- Active Effects Tab --}}

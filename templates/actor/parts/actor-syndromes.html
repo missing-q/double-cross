@@ -1,0 +1,26 @@
+<ol class="items-list">
+  <li class="item flexrow items-header">
+    <div class="item-name">Name</div>
+    <div class="item-controls">
+      <a class="item-control item-create" title="Create item" data-type="syndrome"><i class="fas fa-plus"></i></a>
+    </div>
+  </li>
+  {{#each syndrome as |item id|}}
+    <li class="item flexrow" data-item-id="{{item._id}}">
+      <div class="item-name">
+        <h4>
+          <select class="syn-dropdown" target-name="name" target-id="{{item._id}}" data-dtype="String">
+            {{#select item.name}}
+              {{#each item.system.list}}
+                <option value="{{this}}">{{this}}</option>
+              {{/each}}
+            {{/select}}
+          </select>
+        </h4>
+      </div>
+      <div class="item-controls">
+        <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+      </div>
+    </li>
+  {{/each}}
+</ol>

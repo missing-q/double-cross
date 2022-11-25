@@ -8,12 +8,6 @@
     "character": {
       "templates": [ "base" ],
       "renegade": {
-        "breed": {
-          "value": ""
-        },
-        "syndrome": {
-          "value": ""
-        },
         "bodymod": {
           "value": 0
         },
@@ -177,7 +171,7 @@
     }
   },
   "Item": {
-    "types": ["power", "armor", "weapon", "vehicle", "lois","traitlois","misc"],
+    "types": ["power", "armor", "weapon", "vehicle", "lois","traitlois","syndrome","misc"],
     "templates": {
       "base": {
         "name":  "",
@@ -222,6 +216,7 @@
       "shieldequipped": false
     },
     "vehicle": {
+      "templates": ["base"],
       "armor": 0,
       "initiative": 0,
       "dash": 0,
@@ -238,10 +233,28 @@
       "loistype": ""
     },
     "traitlois": {
-      "name": "",
+      "templates": ["base"],
       "flavor": "",
-      "description": "",
       "effects": ""
+    },
+    "syndrome":{
+      "templates": [ "base" ],
+      "list" : {
+        "-" : "-",
+        "angelhalo": "Angel Halo",
+        "balor": "Balor",
+        "blackdog": "Black Dog",
+        "bramstoker": "Bram Stoker",
+        "chimaera": "Chimaera",
+        "exile": "Exile",
+        "hanuman": "Hanuman",
+        "morpheus": "Morpheus",
+        "neumann": "Neumann",
+        "orcus": "Orcus",
+        "salamandra": "Salamandra",
+        "solaris": "Solaris",
+        "ouroboros": "Ouroboros"
+      }
     },
     "misc": {
       "templates": [ "base" ]
