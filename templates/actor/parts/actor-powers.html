@@ -1,6 +1,48 @@
+<div class = "grid-span-12">
+  <div class = "flex-group-center">
+    Info
+  </div>
+</div>
+<section class="grid grid-3col">
+  <!--power defs-->
+  <section class="main grid-span-1">
+    <label for="system.renegade.breed" class="resource-label">Breed</label>
+    <div class="resource-content flexrow flex-center flex-between">
+      {{system.renegade.breed}}
+    </div>
+    
+  </section>
+
+  <section class="main grid-span-1">
+    {{> "systems/double_cross/templates/actor/parts/actor-syndromes.html"}}
+  </section>
+
+  <section class="main grid-span-1">
+    <div class="abilities flexcol">
+      <label class="resource-label">Modifiers</label>
+      {{#each system.renegade.mods as |ability key|}}
+      <div class="ability flexrow flex-group-center">
+        <label for="system.renegade.mods.{{key}}.value" class="resource-label rollable flexlarge align-left" data-label="{{ability.label}}">{{ability.label}}</label>
+        <input type="text" name="system.renegade.mods.{{key}}.value" value="{{ability.value}}" data-dtype="Number"/>
+      </div>
+      {{/each}}
+    </div>
+  </section>
+</section>
+
+<div class = "grid-span-12">
+  <div class = "flex-group-center">
+    Powers
+  </div>
+</div>
+
+<!--Add powers-->
+
 <ol class="items-list">
   <li class="item flexrow items-header">
     <div class="item-name">Name</div>
+    <div>Level</div>
+    <div>Max Level</div>
     <div class="item-controls">
       <a class="item-control item-create" title="Create item" data-type="power"><i class="fas fa-plus"></i> Add power</a>
     </div>

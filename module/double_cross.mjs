@@ -25,9 +25,10 @@ Hooks.once('init', async function() {
   // Add custom constants for configuration.
   CONFIG.BOILERPLATE = BOILERPLATE;
   CONFIG.breeds = {
-    'fullbreed': 'Fullbreed',
-    'halfbreed': 'Halfbreed',
-    'tribreed': 'Tribreed'
+    0: 'Non-Overed',
+    1: 'Fullbreed',
+    2: 'Halfbreed',
+    3: 'Tribreed'
   }
   CONFIG.syndromelist = {
     '-': '-',

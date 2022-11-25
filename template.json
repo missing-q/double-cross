@@ -8,17 +8,23 @@
     "character": {
       "templates": [ "base" ],
       "renegade": {
-        "bodymod": {
-          "value": 0
-        },
-        "sensemod": {
-          "value": 0
-        },
-        "mindmod": {
-          "value": 0
-        },
-        "socialmod": {
-          "value": 0
+        "mods":{
+          "bodymod": {
+            "label": "Body",
+            "value": 0
+          },
+          "sensemod": {
+            "label": "Sense",
+            "value": 0
+          },
+          "mindmod": {
+            "label": "Mind",
+            "value": 0
+          },
+          "socialmod": {
+            "label": "Social",
+            "value": 0
+          }
         }
       },
       "stats": {

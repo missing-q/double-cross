@@ -72,6 +72,15 @@ export class Double_CrossActor extends Actor {
     } else {
       systemData.doomstats.doomdice = 0;
     }
+
+    //calculating breed
+    let syncount = 0;
+    actorData.items.toObject().forEach(item => {
+      if (item.type == "syndrome"){
+        syncount++;
+      }
+    })
+    systemData.renegade.breed = CONFIG.breeds[syncount]
   }
 
   /**
