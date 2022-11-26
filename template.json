@@ -48,34 +48,42 @@
       "skills": {
         "melee": {
           "label":"Melee",
+          "stat": "body",
           "value": 0
         },
         "ranged": {
           "label":"Ranged",
+          "stat": "sense",
           "value": 0
         },
         "rc": {
           "label":"RC",
+          "stat": "mind",
           "value": 0
         },
         "negotiate": {
           "label":"Negotiate",
+          "stat": "social",
           "value": 0
         },
         "dodge": {
           "label":"Dodge",
+          "stat": "body",
           "value": 0
         },
         "perception": {
           "label":"Perception",
+          "stat": "sense",
           "value": 0
         },
         "will": {
           "label":"Will",
+          "stat": "mind",
           "value": 0
         },
         "procure": {
           "label":"Procure",
+          "stat": "social",
           "value": 0
         }
       },
@@ -95,7 +103,8 @@
               "value": 0
             }
           },
-          "label":"Ride"
+          "label":"Ride",
+          "stat": "body"
         },
         "art":{
           "skills":{
@@ -112,7 +121,8 @@
               "value": 0
             }
           },
-          "label":"Art"
+          "label":"Art",
+          "stat": "sense"
         },
         "knowledge":{
           "skills":{
@@ -129,7 +139,8 @@
               "value": 0
             }
           },
-          "label":"Knowledge"
+          "label":"Knowledge",
+          "stat": "mind"
         },
         "info":{
           "skills":{
@@ -146,7 +157,8 @@
               "value": 0
             }
           },
-          "label":"Info"
+          "label":"Info",
+          "stat": "social"
         }
       },
       "derived": {

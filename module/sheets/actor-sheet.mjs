@@ -163,7 +163,8 @@ export class Double_CrossActorSheet extends ActorSheet {
     //html.find(".effect-control").click(ev => onManageActiveEffect(ev, this.actor));
 
     // Rollable abilities.
-    html.find('.rollable').click(this._onRoll.bind(this));
+    //html.find('.rollable').click(this._onRoll.bind(this));
+    html.find('.rollable').click(this.dxRoll.bind(this));
 
     // Drag events for macros.
     if (this.actor.isOwner) {
@@ -229,6 +230,7 @@ export class Double_CrossActorSheet extends ActorSheet {
     event.preventDefault();
     const element = event.currentTarget;
     const dataset = element.dataset;
+    console.log(dataset)
 
     // Handle item rolls.
     if (dataset.rollType) {
@@ -252,4 +254,106 @@ export class Double_CrossActorSheet extends ActorSheet {
     }
   }
 
+  async dxRoll(event){
+    event.preventDefault();
+    const element = event.currentTarget;
+    const dataset = element.dataset;
+    console.log(dataset)
+
+    let inputs = [
+      {
+          type: 'number',
+          label: 'Num d10',
+          options: '1'
+      },    {
+          type: 'number',
+          label: 'Modifier',
+          options: '0'
+      },    {
+          type: 'number',
+          label: 'Crit Range',
+          options: '10'
+      }
+  ]
+
+  if (dataset.roll){
+    let data = JSON.parse(dataset.roll);
+    console.log(data);
+    if (data[0] == -1){
+      //skill, grab the associated stat
+      let legend = {
+        'melee':'body',
+        'ranged':'sense',
+        'rc':'mind',
+        'negotiate':'social',
+        'ride':'body',
+        'art':'sense',
+        'knowledge':'mind',
+        'info':'social'
+      }
+      let key = legend[dataset.label.toLowerCase()];
+      let value = this.actor.system.stats[key].value;
+      console.log(value)
+      data[0] = value;
+    }
+    inputs[0].options = data[0].toString();
+    inputs[1].options = data[1].toString();
+    inputs[2].options = data[2].toString();
+  }
+  console.log(inputs)
+  const result = await warpgate.menu({inputs}, {title: 'Quick roll'});
+  if (!result.buttons) return;
+  console.log(result)
+  const [num_of_dice, modifier, crit_range] = result.inputs;
+  const flavor = "My flavor text here";
+let crits = 0;
+let loopy= 1;
+let critLoop= crit_range;
+/* --------------- */
+const roll = new Roll(`${num_of_dice}d10 + ${modifier}`);
+await roll.evaluate({async: true});
+addCrits();
+
+// set results to 10 if above crit range
+function addCrits(){
+    crits = 0;
+    for(let result of roll.terms[0].results){
+        if(result.result >= critLoop && !result.evaluated){
+            result.result = 10*loopy;
+            result.evaluated = true;
+            crits++;
+        }
+    }
+    if(crits > 0){
+         for(let result of roll.terms[0].results){
+            if(result.result >= critLoop){
+               result.result = result.result+Math.ceil(Math.random()*10);
+               result.evaluated = false;
+            }
+         }
+        // recursive
+        loopy=loopy+1;
+        critLoop=critLoop+10;
+        addCrits();
+    }
+}
+
+//assume this is important
+
+
+// find highest value
+let highest = 0;
+for(let result of roll.terms[0].results) if(result.result > highest) highest = result.result;
+
+let highestValueIndex = roll.terms[0].results.findIndex(i => {return i.result === highest;});
+for(let i = 0; i < roll.terms[0].results.length; i++){
+    if(i === highestValueIndex) continue;
+    roll.terms[0].results[i].active = false;
+    roll.terms[0].results[i].discarded = true;
+}
+roll._total = highest + modifier;
+
+roll.toMessage({flavor});
+
+  }
 }

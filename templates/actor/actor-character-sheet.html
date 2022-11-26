@@ -10,37 +10,6 @@
       from 1 to 12 and will create that number of columns.  --}}
       <div class="resources grid grid-3col">
 
-        <!-- "flex-group-center" is also defined in the _grid.scss file
-        and it will add a small amount of padding, a border, and will
-        center all of its child elements content and text. -->
-        <!--
-        <div class="resource flex-group-center">
-          <label for="system.health.value" class="resource-label">Health</label>
-          <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="system.health.value" value="{{system.health.value}}" data-dtype="Number"/>
-          <span> / </span>
-          <input type="text" name="system.health.max" value="{{system.health.max}}" data-dtype="Number"/>
-          </div>
-        </div>
-
-        <div class="resource flex-group-center">
-          <label for="system.power.value" class="resource-label">Power</label>
-          <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="system.power.value" value="{{system.power.value}}" data-dtype="Number"/>
-          <span> / </span>
-          <input type="text" name="system.power.max" value="{{system.power.max}}" data-dtype="Number"/>
-          </div>
-        </div>
-
-        <div class="resource flex-group-center">
-          <label for="system.attributes.level.value" class="resource-label">Level</label>
-          <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="system.attributes.level.value" value="{{system.attributes.level.value}}" data-dtype="Number"/>
-          </div>
-        </div>
-
-        -->
-
       </div>
     </div>
   </header>
@@ -68,7 +37,7 @@
         {{#each system.stats as |ability key|}}
           <section class = "grid-span-1">
             <div class="ability flexrow flex-group-center">
-              <label for="system.stats.{{key}}.value" class="resource-label rollable flexlarge align-left" data-label="{{ability.label}}">{{ability.label}}</label>
+              <label for="system.stats.{{key}}.value" class="resource-label rollable flexlarge align-left" data-roll="[{{ability.value}},0,10]" data-label="{{ability.label}}">{{ability.label}}</label>
               <input type="number" name="system.stats.{{key}}.value" value="{{ability.value}}" data-dtype="Number"/>
             </div>
           </section>
@@ -84,7 +53,7 @@
         {{#each system.skills as |skill key|}}
           <section class = "grid-span-1">
             <div class="skill flexrow flex-group-center">
-              <label for="system.skills.{{key}}.value" class="resource-label rollable flexlarge align-left" data-label="{{skill.label}}">{{skill.label}}</label>
+              <label for="system.skills.{{key}}.value" class="resource-label rollable flexlarge align-left" data-roll="[-1,{{skill.value}},10]" data-label="{{skill.label}}">{{skill.label}}</label>
               <input type="number" name="system.skills.{{key}}.value" value="{{skill.value}}" data-dtype="Number"/>
             </div>
           </section>
@@ -97,7 +66,7 @@
           <section class = "grid-span-1 flexcol">
             {{#each group.skills as |skill key|}}
               <div class="skill flexrow flex-group-center">
-                <label for="system.specialskills.{{keyext}}.skills.{{key}}.value" class="resource-label rollable flexlarge align-left" data-label="{{group.label}}">{{group.label}}</label>
+                <label for="system.specialskills.{{keyext}}.skills.{{key}}.value" class="resource-label rollable flexlarge align-left" data-roll="[-1,{{skill.value}},10]" data-label="{{group.label}}">{{group.label}}</label>
                 <input type="text" name="system.specialskills.{{keyext}}.skills.{{key}}.name" value="{{skill.name}}" data-dtype="String"/>
                 <input type="number" name="system.specialskills.{{keyext}}.skills.{{key}}.value" value="{{skill.value}}" data-dtype="Number"/>
               </div>
@@ -115,39 +84,39 @@
       <div class = "flexrow">
         <!--HP-->
         <div class="derived flex-group-center">
-          <label for="system.derived.health.current" class="resource-label rollable flexlarge align-left">HP</label>
+          <label for="system.derived.health.current" class="resource-label flexlarge align-left">HP</label>
           <input type="number" name="system.derived.health.current" value="{{system.derived.health.current}}" data-dtype="Number"/>
           <span class ="derivednum">/ {{system.derived.health.max}}</span>
         </div>
 
         <!--Stock-->
         <div class="derived flex-group-center">
-          <label for="system.derived.stock.current" class="resource-label rollable flexlarge align-left">Stock</label>
+          <label for="system.derived.stock.current" class="resource-label flexlarge align-left">Stock</label>
           <input type="number" name="system.derived.stock.current" value="{{system.derived.stock.current}}" data-dtype="Number"/>
           <span class ="derivednum">/ {{system.derived.stock.max}}</span>
         </div>
 
         <!--Savings-->
         <div class="derived flex-group-center">
-          <label for="system.derived.savings" class="resource-label rollable flexlarge align-left">Savings</label>
+          <label for="system.derived.savings" class="resource-label flexlarge align-left">Savings</label>
           <input type="number" name="system.derived.savings" value="{{system.derived.savings}}" data-dtype="Number"/>
         </div>
 
         <!--Initiative-->
         <div class="derived flex-group-center">
-          <label for="system.derived.initiative" class="resource-label rollable flexlarge align-left">Init</label>
+          <label for="system.derived.initiative" class="resource-label flexlarge align-left">Init</label>
           <span class ="derivednum">{{system.derived.initiative}}</span>
         </div>
 
         <!--Move-->
         <div class="derived flex-group-center">
-          <label for="system.derived.move" class="resource-label rollable flexlarge align-left">Move</label>
+          <label for="system.derived.move" class="resource-label flexlarge align-left">Move</label>
           <span class ="derivednum">{{system.derived.move}}</span>
         </div>
 
         <!--Dash-->
         <div class="derived flex-group-center">
-          <label for="system.derived.dash" class="resource-label rollable flexlarge align-left">Dash</label>
+          <label for="system.derived.dash" class="resource-label flexlarge align-left">Dash</label>
           <span class ="derivednum">{{system.derived.dash}}</span>
         </div>
       </div>
@@ -161,25 +130,25 @@
       <div class = "flexrow">
         <!--Lvl-->
         <div class="derived flex-group-center">
-          <label for="system.encroach.lvl" class="resource-label rollable flexlarge align-left">Lvl</label>
+          <label for="system.encroach.lvl" class="resource-label flexlarge align-left">Lvl</label>
           <span class ="derivednum">{{system.encroach.lvl}}</span>
         </div>
 
         <!--Dice-->
         <div class="derived flex-group-center">
-          <label for="system.encroach.dice" class="resource-label rollable flexlarge align-left">Dice</label>
+          <label for="system.encroach.dice" class="resource-label flexlarge align-left">Dice</label>
           <span class ="derivednum">{{system.encroach.dice}}</span>
         </div>
 
         <!--Min Encroach-->
         <div class="derived flex-group-center">
-          <label for="system.encroach.min" class="resource-label rollable flexlarge align-left">Min Encroach</label>
+          <label for="system.encroach.min" class="resource-label flexlarge align-left">Min Encroach</label>
           <input class = "encroach" type="number" name="system.encroach.min" value="{{system.encroach.min}}" data-dtype="Number"/>
         </div>
 
         <!--Encroach-->
         <div class="derived flex-group-center">
-          <label for="system.encroach.value" class="resource-label rollable flexlarge align-left">Encroach</label>
+          <label for="system.encroach.value" class="resource-label flexlarge align-left">Encroach</label>
           <input class = "encroach" type="number" name="system.encroach.value" value="{{system.encroach.value}}" data-dtype="Number"/>
           <span class ="derivednum">/100</span>
         </div>
@@ -194,7 +163,7 @@
         {{#each system.itemstats as |ability key|}}
           <section class = "grid-span-1">
             <div class="ability flexrow flex-group-center">
-              <label for="system.itemstats.{{key}}.value" class="resource-label rollable flexlarge align-left" data-label="{{ability.label}}">{{ability.label}}</label>
+              <label for="system.itemstats.{{key}}.value" class="resource-label flexlarge align-left" data-label="{{ability.label}}">{{ability.label}}</label>
               <input type="number" name="system.itemstats.{{key}}.value" value="{{ability.value}}" data-dtype="Number"/>
             </div>
           </section>
