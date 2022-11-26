@@ -218,7 +218,6 @@
     "types": ["power", "armor", "weapon", "vehicle", "lois","traitlois","syndrome","misc"],
     "templates": {
       "base": {
-        "name":  "",
         "description": ""
       }
     },
@@ -263,9 +262,10 @@
     "vehicle": {
       "templates": ["base"],
       "armor": 0,
+      "power":0,
       "initiative": 0,
       "dash": 0,
-      "rideskill": 0,
+      "rideskill": "-",
       "procure": 0,
       "stock": 0
     },

@@ -1,0 +1,75 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+      <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+      <div class="header-fields">
+        <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
+      </div>
+    </header>
+  
+    {{!-- Sheet Tab Navigation --}}
+    <nav class="sheet-tabs tabs" data-group="primary">
+      <a class="item" data-tab="description">Description</a>
+      <a class="item" data-tab="attributes">Attributes</a>
+    </nav>
+  
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+  
+      {{!-- Description Tab --}}
+      <div class="tab" data-group="primary" data-tab="description">
+        <textarea name="system.description" value="{{system.description}}">{{system.description}}</textarea>
+      </div>
+  
+      {{!-- Attributes Tab --}}
+      <div class="tab attributes" data-group="primary" data-tab="attributes">
+        {{!-- As you add new fields, add them in here! --}}
+        <div class="resource">
+
+            <select name = "system.type" data-dtype="String">
+                {{#select system.type}}
+                  {{#each weapontypes}}
+                    <option value="{{this}}">{{this}}</option>
+                  {{/each}}
+                {{/select}}
+            </select>
+
+            <select name = "system.skill" data-dtype="String">
+                {{#select system.skill}}
+                  {{#each skillslist}}
+                    <option value="{{this}}">{{this}}</option>
+                  {{/each}}
+                {{/select}}
+            </select>
+
+            <label class="resource-label">Accuracy</label>
+            <input type="number" name="system.accuracy" value="{{system.accuracy}}" data-dtype="Number"/>
+    
+            <label class="resource-label">Initiative</label>
+            <input type="number" name="system.initiative" value="{{system.initiative}}" data-dtype="Number"/>
+    
+            <label class="resource-label">Power</label>
+            <input type="number" name="system.power" value="{{system.power}}" data-dtype="Number"/>
+    
+            <label class="resource-label">Guard</label>
+            <input type="number" name="system.guard" value="{{system.guard}}" data-dtype="Number"/>
+    
+            <label class="resource-label">Range</label>
+            <input type="number" name="system.range" value="{{system.range}}" data-dtype="Number"/>
+
+            <label class="resource-label">Procure</label>
+            <input type="number" name="system.procure" value="{{system.procure}}" data-dtype="Number"/>
+
+            <label class="resource-label">Stock</label>
+            <input type="number" name="system.stock" value="{{system.stock}}" data-dtype="Number"/>
+    
+            <label class="resource-label">Weapon Equipped</label>
+            <input type="checkbox" name="system.weaponequipped" value="{{system.weaponequipped}}" data-dtype="Boolean" {{checked system.weaponequipped}}/>
+
+            <label class="resource-label">Shield Equipped</label>
+            <input type="checkbox" name="system.shieldequipped" value="{{system.shieldequipped}}" data-dtype="Boolean" {{checked system.shieldequipped}}/>
+            
+        </div>
+      </div>
+    </section>
+  </form>
+  

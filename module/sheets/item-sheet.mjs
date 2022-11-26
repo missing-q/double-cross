@@ -56,7 +56,14 @@ export class Double_CrossItemSheet extends ItemSheet {
     if (itemData.type == "lois"){
       context.loistypes = CONFIG.loistypes;
     }
-    //console.log(context);
+    if (itemData.type == "weapon"){
+      context.skillslist = CONFIG.skillslist;
+      context.weapontypes = CONFIG.weapontypes;
+    }
+    if (itemData.type == "vehicle"){
+      context.rideskills = CONFIG.rideskill;
+    }
+    console.log(context);
 
     return context;
   }

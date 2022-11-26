@@ -53,6 +53,8 @@ Hooks.once('init', async function() {
   CONFIG.rangelist = ['Close','Weapon','View','-'];
   CONFIG.encroachlist = ['0','1','2','3','4','5','6','7','8','2d10','4d10','Refer','-']
   CONFIG.loistypes = ['Lois','Special','Titus']
+  CONFIG.weapontypes = ['Melee','Ranged','Melee/Ranged']
+  CONFIG.rideskill = ['One Wheel','Two Wheel','Three Wheel','Four Wheel','Five Wheel','Aircraft','Watercraft','Spacecraft']
   /**
    * Set an initiative formula for the system
    * @type {String}
