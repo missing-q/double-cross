@@ -52,6 +52,7 @@ Hooks.once('init', async function() {
   CONFIG.targetlist = ['Self','Single','(N)','Area','Area(Select)','Scene','Scene(Select)','-']
   CONFIG.rangelist = ['Close','Weapon','View','-'];
   CONFIG.encroachlist = ['0','1','2','3','4','5','6','7','8','2d10','4d10','Refer','-']
+  CONFIG.loistypes = ['Lois','Special','Titus']
   /**
    * Set an initiative formula for the system
    * @type {String}

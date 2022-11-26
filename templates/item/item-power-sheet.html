@@ -18,12 +18,12 @@
 
     {{!-- Description Tab --}}
     <div class="tab" data-group="primary" data-tab="description">
-      {{editor system.description target="system.description" rollData=rollData button=true owner=owner editable=editable}}
+      <textarea name="system.description" value="{{system.description}}">{{system.description}}</textarea>
     </div>
 
     {{!-- Flavor Tab --}}
     <div class="tab" data-group="primary" data-tab="flavor">
-      {{editor system.flavor target="system.flavor" rollData=rollData button=true owner=owner editable=editable}}
+      <textarea name="system.flavor" value="{{system.flavor}}">{{system.flavor}}</textarea>
     </div>
 
     {{!-- Attributes Tab --}}

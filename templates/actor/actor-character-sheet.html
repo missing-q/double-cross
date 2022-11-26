@@ -60,10 +60,8 @@
     {{!-- Owned Features Tab --}}
     <div class="tab features" data-group="primary" data-tab="data">
       <!-- stats-->
-      <div class = "info grid-span-12">
-        <div class = "flex-group-center">
-          Stats
-        </div>
+      <div class = "info flex-group-center">
+        Stats
       </div>
 
       <section class="grid grid-4col">
@@ -78,10 +76,8 @@
       </section>
 
       <!--skills-->
-      <div class = "info grid-span-12">
-        <div class = "flex-group-center">
-          Skills
-        </div>
+      <div class = "info flex-group-center">
+        Skills
       </div>
 
       <section class="grid grid-4col">
@@ -111,11 +107,10 @@
       </section>
 
       <!--Derived Stats-->
-      <div class = "info grid-span-12">
-        <div class = "flex-group-center">
-          Derived Stats
-        </div>
+      <div class = "info flex-group-center">
+        Derived Stats
       </div>
+
       <!--Sadly since we have to handle each different there's no iteration LMAO-->
       <div class = "flexrow">
         <!--HP-->
@@ -158,11 +153,10 @@
       </div>
 
       <!--Doom Stats-->
-      <div class = "info grid-span-12">
-        <div class = "flex-group-center">
-          Encroach
-        </div>
+      <div class = "info flex-group-center">
+        Encroach
       </div>
+      
       <!--Sadly since we have to handle each different there's no iteration LMAO-->
       <div class = "flexrow">
         <!--Lvl-->
@@ -192,10 +186,8 @@
       </div>
 
       <!--Item Stats-->
-      <div class = "info grid-span-12">
-        <div class = "flex-group-center">
-          Item Stats
-        </div>
+      <div class = "info flex-group-center">
+        Item Stats
       </div>
 
       <section class="grid grid-6col">
@@ -211,25 +203,19 @@
 
     </div>
 
-    {{!-- Owned Spells Tab --}}
-    <div class="tab spells" data-group="primary" data-tab="powers">
+    {{!-- Power Tab --}}
+    <div class="tab powers" data-group="primary" data-tab="powers">
       {{> "systems/double_cross/templates/actor/parts/actor-powers.html"}}
     </div>
 
-    {{!-- Biography Tab --}}
-    <div class="tab biography" data-group="primary" data-tab="description">
-      {{!-- If you want TinyMCE editors to output inline rolls when rendered, you need to pass the actor's roll data to the rollData property. --}}
-      {{editor system.biography target="system.biography" rollData=rollData button=true owner=owner editable=editable}}
+    {{!-- Character Tab --}}
+    <div class="tab character" data-group="primary" data-tab="character">
+      {{> "systems/double_cross/templates/actor/parts/actor-character.html"}}
     </div>
 
     {{!-- Owned Items Tab --}}
     <div class="tab items" data-group="primary" data-tab="items">
        {{> "systems/double_cross/templates/actor/parts/actor-items.html"}}
-    </div>
-
-    {{!-- Active Effects Tab --}}
-    <div class="tab effects flexcol" data-group="primary" data-tab="effects">
-      {{> "systems/double_cross/templates/actor/parts/actor-effects.html"}}
     </div>
 
   </section>

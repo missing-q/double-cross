@@ -1,0 +1,59 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+      <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+      <div class="header-fields">
+        <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
+      </div>
+    </header>
+  
+    {{!-- Sheet Tab Navigation --}}
+    <nav class="sheet-tabs tabs" data-group="primary">
+        <a class="item" data-tab="attributes">Attributes</a>
+        <a class="item" data-tab="relationship">Relationship</a>
+        <a class="item" data-tab="positive">Positive Emotions</a>
+        <a class="item" data-tab="negative">Negative Emotions</a>
+        <a class="item" data-tab="primary">Primary Emotion</a>
+    </nav>
+  
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+  
+      {{!-- Attributes Tab --}}
+      <div class="tab attributes" data-group="primary" data-tab="attributes">
+        {{!-- As you add new fields, add them in here! --}}
+        <div class="resource">
+          
+          <label class="resource-label">Lois Type</label>
+          <select name = "system.loistype" data-dtype="String">
+            {{#select system.loistype}}
+              {{#each loistypes}}
+                <option value="{{this}}">{{this}}</option>
+              {{/each}}
+            {{/select}}
+          </select>
+        </div>
+      </div>
+
+      {{!-- Relationship Tab --}}
+      <div class="tab" data-group="primary" data-tab="relationship">
+        <textarea name="system.relationship" value="{{system.relationship}}">{{system.relationship}}</textarea>
+      </div>
+  
+      {{!-- Positive Tab --}}
+      <div class="tab" data-group="primary" data-tab="positive">
+        <textarea name="system.positive" value="{{system.positive}}">{{system.positive}}</textarea>
+      </div>
+
+      {{!-- Negative Tab --}}
+      <div class="tab" data-group="primary" data-tab="negative">
+        <textarea name="system.negative" value="{{system.negative}}">{{system.negative}}</textarea>
+      </div>
+
+      {{!-- Primary Tab --}}
+      <div class="tab" data-group="primary" data-tab="primary">
+        <textarea name="system.primary" value="{{system.primary}}">{{system.primary}}</textarea>
+      </div>
+
+    </section>
+  </form>
+  

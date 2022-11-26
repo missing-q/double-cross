@@ -59,6 +59,13 @@
   grid-template-columns: repeat(12, minmax(0, 1fr));
 }
 
+.grid-15col {
+  grid-column: span 15 / span 15;
+  grid-template-columns: repeat(15, minmax(0, 1fr));
+  gap: 0px;
+  margin: 0px 0;
+}
+
 .grid-16col {
   grid-column: span 16 / span 16;
   grid-template-columns: repeat(16, minmax(0, 1fr));

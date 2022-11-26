@@ -53,6 +53,9 @@ export class Double_CrossItemSheet extends ItemSheet {
       context.rangelist = CONFIG.rangelist;
       context.encroachlist = CONFIG.encroachlist;
     }
+    if (itemData.type == "lois"){
+      context.loistypes = CONFIG.loistypes;
+    }
     //console.log(context);
 
     return context;

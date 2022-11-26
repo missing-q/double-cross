@@ -10,6 +10,6 @@
     "systems/double_cross/templates/actor/parts/actor-items.html",
     "systems/double_cross/templates/actor/parts/actor-powers.html",
     "systems/double_cross/templates/actor/parts/actor-syndromes.html",
-    "systems/double_cross/templates/actor/parts/actor-effects.html",
+    "systems/double_cross/templates/actor/parts/actor-character.html",
   ]);
 };

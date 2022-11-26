@@ -1,0 +1,138 @@
+<!--Characteristics-->
+<div class = "info flex-group-center">
+  Characteristics
+</div>
+<div class = "flexrow">
+  <!--name-->
+  <label for="system.characteristics.name" class="resource-label flexlarge align-left">Name</label>
+  <input type="text" name="system.characteristics.name" value="{{system.characteristics.name}}" data-dtype="String"/>
+
+  <!--gender-->
+  <label for="system.characteristics.gender" class="resource-label flexlarge align-left">Gender</label>
+  <input type="text" name="system.characteristics.gender" value="{{system.characteristics.gender}}" data-dtype="String"/>
+
+</div>
+<div class = "flexrow">
+  <!--age-->
+  <label for="system.characteristics.age" class="resource-label flexlarge align-left">Age</label>
+  <input type="text" name="system.characteristics.age" value="{{system.characteristics.age}}" data-dtype="String"/>
+
+  <!--height-->
+  <label for="system.characteristics.height" class="resource-label flexlarge align-left">Height</label>
+  <input type="text" name="system.characteristics.height" value="{{system.characteristics.height}}" data-dtype="String"/>
+
+  <!--build-->
+  <label for="system.characteristics.build" class="resource-label flexlarge align-left">Build</label>
+  <input type="text" name="system.characteristics.build" value="{{system.characteristics.build}}" data-dtype="String"/>
+
+</div>
+
+<!--Work and Cover-->
+<div class = "info flex-group-center">
+  Work and Cover
+</div>
+<div class = "flexrow">
+  <label for="system.work_cover.work.name" class="resource-label flexlarge align-left">Work</label>
+  <input type="text" name="system.work_cover.work.name" value="{{system.work_cover.work.name}}" data-dtype="String"/>
+
+  <label for="system.work_cover.work.description" class="resource-label flexlarge align-left">Desc.</label>
+  <textarea name="system.work_cover.work.description" value="{{system.work_cover.work.description}}">{{system.work_cover.work.description}}</textarea>
+
+  <label for="system.work_cover.work.benefits" class="resource-label flexlarge align-left">Benefits</label>
+  <textarea name="system.work_cover.work.benefits" value="{{system.work_cover.work.benefits}}">{{system.work_cover.work.benefits}}</textarea>
+</div>
+<div class = "flexrow">
+  <label for="system.work_cover.cover.name" class="resource-label flexlarge align-left">Cover</label>
+  <input type="text" name="system.work_cover.cover.name" value="{{system.work_cover.cover.name}}" data-dtype="String"/>
+
+  <label for="system.work_cover.cover.description" class="resource-label flexlarge align-left">Desc.</label>
+  <textarea name="system.work_cover.cover.description" value="{{system.work_cover.cover.description}}">{{system.work_cover.cover.description}}</textarea>
+
+  <label for="system.work_cover.cover.benefits" class="resource-label flexlarge align-left">Benefits</label>
+  <textarea name="system.work_cover.cover.benefits" value="{{system.work_cover.cover.benefits}}">{{system.work_cover.cover.benefits}}</textarea>
+</div>
+
+<!--impulse and bonds-->
+<section class = "grid grid-2col">
+  <!--Impulse-->
+  <div class = "grid-span-1">
+    <div class = "info flex-group-center">
+      Impulse
+    </div>
+
+    <label for="system.impulse.impulse" class="resource-label flexlarge align-left">Impulse</label>
+    <input type="text" name="system.impulse.impulse" value="{{system.impulse.impulse}}" data-dtype="String"/>
+
+    <label for="system.impulse.awakening" class="resource-label flexlarge align-left">Awakening</label>
+    <input type="text" name="system.impulse.awakening" value="{{system.impulse.awakening}}" data-dtype="String"/>
+  </div>
+  <!--Bonds-->
+  <div class = "grid-span-1">
+    <div class = "info flex-group-center">
+      Bonds
+    </div>
+    <textarea name="system.bonds" value="{{system.bonds}}">{{system.bonds}}</textarea>
+  </div>
+</section>
+
+<!--Loises-->
+<div class = "info flex-group-center">
+  Lois
+</div>
+<!--Add loises-->
+<div class="grid grid-7col item items-header">
+  <div class = "grid-span-1">Name</div>
+  <div class = "grid-span-1">Relationship</div>
+  <div class = "grid-span-1">Pos. Emotions</div>
+  <div class = "grid-span-1">Neg. Emotions</div>
+  <div class = "grid-span-1">Primary Emotion</div>
+  <div class = "grid-span-1">LoisType</div>
+  <div class="grid-span-1 item-controls">
+    <a class="item-control item-create" title="Create item" data-type="lois"><i class="fas fa-plus"></i> Add power</a>
+  </div>
+</div>
+<ol class="items-list">
+  {{#each lois as |item id|}}
+    <li class="item grid grid-7col" data-item-id="{{item._id}}">
+      <div class = "grid-span-1 flex-group-center">{{item.name}}</div>
+      <div class = "grid-span-1 flex-group-center">{{item.system.relationship}}</div>
+      <div class = "grid-span-1 flex-group-center">{{item.system.positive}}</div>
+      <div class = "grid-span-1 flex-group-center">{{item.system.negative}}</div>
+      <div class = "grid-span-1 flex-group-center">{{item.system.primary}}</div>
+      <div class = "grid-span-1 flex-group-center">{{item.system.loistype}}</div>
+      <div class="grid-span-1 item-controls">
+        <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+        <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+      </div>
+    </li>
+  {{/each}}
+</ol>
+
+<!--traitloises-->
+<div class = "info flex-group-center">
+  Trait Lois
+</div>
+
+<div class="grid grid-5col item items-header">
+  <div class = "grid-span-1">Name</div>
+  <div class = "grid-span-1">Flavor</div>
+  <div class = "grid-span-1">Description</div>
+  <div class = "grid-span-1">Effects</div>
+  <div class="grid-span-1 item-controls">
+    <a class="item-control item-create" title="Create item" data-type="traitlois"><i class="fas fa-plus"></i> Add power</a>
+  </div>
+</div>
+<ol class="items-list">
+  {{#each traitlois as |item id|}}
+    <li class="item grid grid-5col" data-item-id="{{item._id}}">
+      <div class = "grid-span-1 flex-group-center">{{item.name}}</div>
+      <div class = "grid-span-1 flex-group-center">{{item.system.flavor}}</div>
+      <div class = "grid-span-1 flex-group-center">{{item.system.description}}</div>
+      <div class = "grid-span-1 flex-group-center">{{item.system.effects}}</div>
+      <div class="grid-span-1 item-controls">
+        <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+        <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+      </div>
+    </li>
+  {{/each}}
+</ol>
