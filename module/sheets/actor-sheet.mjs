@@ -45,6 +45,7 @@ export class Double_CrossActorSheet extends ActorSheet {
     // Add roll data for TinyMCE editors.
     context.rollData = context.actor.getRollData();
     context.breeds = CONFIG.breeds;
+    context.skillslist = CONFIG.skillslist;
     //context.syndromelist = CONFIG.syndromelist;
     //console.log("hiii!!");
     //console.log(context.breeds);
@@ -64,7 +65,7 @@ export class Double_CrossActorSheet extends ActorSheet {
     // Handle ability scores.
     /*
     for (let [k, v] of Object.entries(context.system.stats)) {
-      v.label = game.i18n.localize(CONFIG.BOILERPLATE.stats[k]) ?? k;
+      v.label = game.i18n.localize(CONFIG.DOUBLECROSS.stats[k]) ?? k;
     }*/
   }
 

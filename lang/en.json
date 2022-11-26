@@ -1,22 +1,22 @@
 {
-  "BOILERPLATE.AbilityStr": "Strength",
-  "BOILERPLATE.AbilityCon": "Constitution",
-  "BOILERPLATE.AbilityDex": "Dexterity",
-  "BOILERPLATE.AbilityInt": "Intelligence",
-  "BOILERPLATE.AbilityWis": "Wisdom",
-  "BOILERPLATE.AbilityCha": "Charisma",
+  "DOUBLECROSS.AbilityStr": "Strength",
+  "DOUBLECROSS.AbilityCon": "Constitution",
+  "DOUBLECROSS.AbilityDex": "Dexterity",
+  "DOUBLECROSS.AbilityInt": "Intelligence",
+  "DOUBLECROSS.AbilityWis": "Wisdom",
+  "DOUBLECROSS.AbilityCha": "Charisma",
 
-  "BOILERPLATE.AbilityStrAbbr": "str",
-  "BOILERPLATE.AbilityConAbbr": "con",
-  "BOILERPLATE.AbilityDexAbbr": "dex",
-  "BOILERPLATE.AbilityIntAbbr": "int",
-  "BOILERPLATE.AbilityWisAbbr": "wis",
-  "BOILERPLATE.AbilityChaAbbr": "cha",
+  "DOUBLECROSS.AbilityStrAbbr": "str",
+  "DOUBLECROSS.AbilityConAbbr": "con",
+  "DOUBLECROSS.AbilityDexAbbr": "dex",
+  "DOUBLECROSS.AbilityIntAbbr": "int",
+  "DOUBLECROSS.AbilityWisAbbr": "wis",
+  "DOUBLECROSS.AbilityChaAbbr": "cha",
 
-  "BOILERPLATE.EffectCreate": "Create Effect",
-  "BOILERPLATE.EffectToggle": "Toggle Effect",
-  "BOILERPLATE.EffectEdit": "Edit Effect",
-  "BOILERPLATE.EffectDelete": "Delete Effect",
+  "DOUBLECROSS.EffectCreate": "Create Effect",
+  "DOUBLECROSS.EffectToggle": "Toggle Effect",
+  "DOUBLECROSS.EffectEdit": "Edit Effect",
+  "DOUBLECROSS.EffectDelete": "Delete Effect",
 
-  "BOILERPLATE.Add": "Add"
+  "DOUBLECROSS.Add": "Add"
 }

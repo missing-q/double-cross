@@ -6,7 +6,7 @@ import { Double_CrossActorSheet } from "./sheets/actor-sheet.mjs";
 import { Double_CrossItemSheet } from "./sheets/item-sheet.mjs";
 // Import helper/utility classes and constants.
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
-import { BOILERPLATE } from "./helpers/config.mjs";
+import { DOUBLECROSS } from "./helpers/config.mjs";
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -23,7 +23,7 @@ Hooks.once('init', async function() {
   };
 
   // Add custom constants for configuration.
-  CONFIG.BOILERPLATE = BOILERPLATE;
+  CONFIG.DOUBLECROSS = DOUBLECROSS;
   CONFIG.breeds = {
     0: 'Non-Overed',
     1: 'Fullbreed',
@@ -46,7 +46,12 @@ Hooks.once('init', async function() {
     'solaris': 'Solaris',
     'ouroboros': 'Ouroboros'
   }
-
+  CONFIG.skillslist = ['Info','RC','Melee','Ranged','Ride','Perception','Dodge','Negotiation','Procure','Will','Knowledge','-','Refer','Syndrome','Body','Sense','Mind','Social','Body/Sense','Mind/Social'];
+  CONFIG.timinglist = ['Auto','Minor','Major','Setup','Constant','Reaction','Initiative', 'Major/Reaction']
+  CONFIG.difficultylist = ['Auto','-','Opposed']
+  CONFIG.targetlist = ['Self','Single','(N)','Area','Area(Select)','Scene','Scene(Select)','-']
+  CONFIG.rangelist = ['Close','Weapon','View','-'];
+  CONFIG.encroachlist = ['0','1','2','3','4','5','6','7','8','2d10','4d10','Refer','-']
   /**
    * Set an initiative formula for the system
    * @type {String}

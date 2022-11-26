@@ -1,4 +1,4 @@
-<div class = "grid-span-12">
+<div class = "info grid-span-12">
   <div class = "flex-group-center">
     Info
   </div>
@@ -30,29 +30,50 @@
   </section>
 </section>
 
-<div class = "grid-span-12">
+<div class = "info grid-span-12">
   <div class = "flex-group-center">
     Powers
   </div>
 </div>
 
 <!--Add powers-->
-
+<div class="grid grid-16col item items-header">
+  <div class = "grid-span-1">Name</div>
+  <div class = "grid-span-1">Lvl</div>
+  <div class = "grid-span-1">Max Lvl</div>
+  <div class = "grid-span-1">Skill</div>
+  <div class = "grid-span-1">Timing</div>
+  <div class = "grid-span-1">Difficulty</div>
+  <div class = "grid-span-1">Target</div>
+  <div class = "grid-span-1">Range</div>
+  <div class = "grid-span-1">Encroach</div>
+  <div class = "grid-span-1">Restrict%</div>
+  <div class = "grid-span-1">Uses</div>
+  <div class = "grid-span-1">Description</div>
+  <div class = "grid-span-1">Flavor</div>
+  <div class = "grid-span-1">Cost</div>
+  <div class="grid-span-2 item-controls">
+    <a class="item-control item-create" title="Create item" data-type="power"><i class="fas fa-plus"></i> Add power</a>
+  </div>
+</div>
 <ol class="items-list">
-  <li class="item flexrow items-header">
-    <div class="item-name">Name</div>
-    <div>Level</div>
-    <div>Max Level</div>
-    <div class="item-controls">
-      <a class="item-control item-create" title="Create item" data-type="power"><i class="fas fa-plus"></i> Add power</a>
-    </div>
-  </li>
   {{#each powers as |item id|}}
-    <li class="item flexrow" data-item-id="{{item._id}}">
-      <div class="item-name">
-        <h4>{{item.name}}</h4>
-      </div>
-      <div class="item-controls">
+    <li class="item grid grid-16col" data-item-id="{{item._id}}">
+      <div class = "grid-span-1 flex-group-center">{{item.name}}</div>
+      <div class = "grid-span-1 flex-group-center">{{item.system.lvl}}</div>
+      <div class = "grid-span-1 flex-group-center">{{item.system.maxlvl}}</div>
+      <div class = "grid-span-1 flex-group-center">{{item.system.skill}}</div>
+      <div class = "grid-span-1 flex-group-center">{{item.system.timing}}</div>
+      <div class = "grid-span-1 flex-group-center">{{item.system.difficulty}}</div>
+      <div class = "grid-span-1 flex-group-center">{{item.system.target}}</div>
+      <div class = "grid-span-1 flex-group-center">{{item.system.range}}</div>
+      <div class = "grid-span-1 flex-group-center">{{item.system.encroach}}</div>
+      <div class = "grid-span-1 flex-group-center">{{item.system.restrict}}</div>
+      <div class = "grid-span-1 flex-group-center">{{item.system.uses}}</div>
+      <div class = "grid-span-1 flexcol itemtextbox flex-group-center">{{item.system.description}}</div>
+      <div class = "grid-span-1 flexcol itemtextbox flex-group-center">{{item.system.flavor}}</div>
+      <div class = "grid-span-1 flex-group-center">{{item.system.cost}}</div>
+      <div class="grid-span-2 item-controls">
         <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
         <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
       </div>

@@ -41,36 +41,36 @@ export class Double_CrossActor extends Actor {
     //initiative
     systemData.derived.initiative = ((2 * systemData.stats.sense.value) + ( systemData.stats.mind.value));
     //move
-    systemData.derived.move = (systemData.derived.initiative.value + 5);
+    systemData.derived.move = (systemData.derived.initiative + 5);
     //dash
-    systemData.derived.dash = ((systemData.derived.initiative.value + 5) * 2);
-    //doom level
-    if (systemData.doom >= 160){
-      systemData.doomstats.doomlvl = 2;
-    } else if (systemData.doom >= 100){
-      systemData.doomstats.doomlvl = 1;
+    systemData.derived.dash = ((systemData.derived.initiative + 5) * 2);
+    //encroach level
+    if (systemData.encroach.value >= 160){
+      systemData.encroach.lvl = 2;
+    } else if (systemData.encroach.value >= 100){
+      systemData.encroach.lvl = 1;
     } else {
-      systemData.doomstats.doomlvl = 0;
+      systemData.encroach.lvl = 0;
     }
-    //doom dice
-    if (systemData.doom >= 300){
-      systemData.doomstats.doomdice = 8;
-    } else if (systemData.doom.value >= 240){
-      systemData.doomstats.doomdice = 7;
-    } else if (systemData.doom.value >= 200){
-      systemData.doomstats.doomdice = 6;
-    } else if (systemData.doom.value >= 160){
-      systemData.doomstats.doomdice = 5;
-    } else if (systemData.doom.value >= 130){
-      systemData.doomstats.doomdice = 4;
-    } else if (systemData.doom.value >= 100){
-      systemData.doomstats.doomdice = 3;
-    } else if (systemData.doom.value >= 80){
-      systemData.doomstats.doomdice = 2;
-    } else if (systemData.doom.value >= 60){
-      systemData.doomstats.doomdice = 1;
+    //encroach dice
+    if (systemData.encroach.value >= 300){
+      systemData.encroach.dice = 8;
+    } else if (systemData.encroach.value >= 240){
+      systemData.encroach.dice = 7;
+    } else if (systemData.encroach.value >= 200){
+      systemData.encroach.dice = 6;
+    } else if (systemData.encroach.value >= 160){
+      systemData.encroach.dice = 5;
+    } else if (systemData.encroach.value >= 130){
+      systemData.encroach.dice = 4;
+    } else if (systemData.encroach.value >= 100){
+      systemData.encroach.dice = 3;
+    } else if (systemData.encroach.value >= 80){
+      systemData.encroach.dice = 2;
+    } else if (systemData.encroach.value >= 60){
+      systemData.encroach.dice = 1;
     } else {
-      systemData.doomstats.doomdice = 0;
+      systemData.encroach.dice = 0;
     }
 
     //calculating breed

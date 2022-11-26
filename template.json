@@ -29,90 +29,124 @@
       },
       "stats": {
         "body": {
+          "label": "Body",
           "value": 0
         },
         "sense": {
+          "label": "Sense",
           "value": 0
         },
         "mind": {
+          "label": "Mind",
           "value": 0
         },
         "social": {
+          "label": "Social",
           "value": 0
         }
       },
       "skills": {
         "melee": {
+          "label":"Melee",
           "value": 0
         },
         "ranged": {
+          "label":"Ranged",
           "value": 0
         },
         "rc": {
+          "label":"RC",
           "value": 0
         },
         "negotiate": {
+          "label":"Negotiate",
           "value": 0
         },
         "dodge": {
+          "label":"Dodge",
           "value": 0
         },
         "perception": {
+          "label":"Perception",
           "value": 0
         },
         "will": {
+          "label":"Will",
           "value": 0
         },
         "procure": {
+          "label":"Procure",
           "value": 0
+        }
+      },
+      "specialskills":{
+        "ride":{
+          "skills":{
+            "ride1": {
+              "name": "",
+              "value": 0
+            },
+            "ride2": {
+              "name": "",
+              "value": 0
+            },
+            "ride3": {
+              "name": "",
+              "value": 0
+            }
+          },
+          "label":"Ride"
         },
-        "ride1": {
-          "name": "",
-          "value": 0
+        "art":{
+          "skills":{
+            "art1": {
+              "name": "",
+              "value": 0
+            },
+            "art2": {
+              "name": "",
+              "value": 0
+            },
+            "art3": {
+              "name": "",
+              "value": 0
+            }
+          },
+          "label":"Art"
         },
-        "art1": {
-          "name": "",
-          "value": 0
+        "knowledge":{
+          "skills":{
+            "knowledge1": {
+              "name": "",
+              "value": 0
+            },
+            "knowledge2": {
+              "name": "",
+              "value": 0
+            },
+            "knowledge3": {
+              "name": "",
+              "value": 0
+            }
+          },
+          "label":"Knowledge"
         },
-        "knowledge1": {
-          "name": "",
-          "value": 0
-        },
-        "info1": {
-          "name": "",
-          "value": 0
-        },
-        "ride2": {
-          "name": "",
-          "value": 0
-        },
-        "art2": {
-          "name": "",
-          "value": 0
-        },
-        "knowledge2": {
-          "name": "",
-          "value": 0
-        },
-        "info2": {
-          "name": "",
-          "value": 0
-        },
-        "ride3": {
-          "name": "",
-          "value": 0
-        },
-        "art3": {
-          "name": "",
-          "value": 0
-        },
-        "knowledge3": {
-          "name": "",
-          "value": 0
-        },
-        "info3": {
-          "name": "",
-          "value": 0
+        "info":{
+          "skills":{
+            "info1": {
+              "name": "",
+              "value": 0
+            },
+            "info2": {
+              "name": "",
+              "value": 0
+            },
+            "info3": {
+              "name": "",
+              "value": 0
+            }
+          },
+          "label":"Info"
         }
       },
       "derived": {
@@ -124,29 +158,33 @@
         },
         "savings": 0
       },
-      "doomstats": {
-        "mindoom": 0
-      },
-      "doom": {
-        "value": 0
+      "encroach": {
+        "min": 0,
+        "value":0
       },
       "itemstats": {
         "initiative": {
+          "label": "Initiative",
           "value": 0
         },
         "accuracy": {
+          "label": "Accuracy",
           "value": 0
         },
         "power": {
+          "label": "Power",
           "value": 0
         },
         "armor": {
+          "label": "Armor",
           "value": 0
         },
         "guard": {
+          "label": "Guard",
           "value": 0
         },
         "dodge": {
+          "label": "Dodge",
           "value": 0
         }
       },
@@ -194,8 +232,9 @@
       "target": "-",
       "range": "-",
       "encroach": "-",
-      "uses": "-",
-      "flavor": "-",
+      "restrict": 0,
+      "uses": 0,
+      "flavor": "",
       "cost": 0
 
     },

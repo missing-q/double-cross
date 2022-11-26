@@ -45,7 +45,14 @@ export class Double_CrossItemSheet extends ItemSheet {
     // Add the actor's data to context.data for easier access, as well as flags.
     context.system = itemData.system;
     context.flags = itemData.flags;
-    context.syndromelist = CONFIG.syndromelist;
+    if (itemData.type == "power"){
+      context.skillslist = CONFIG.skillslist;
+      context.timinglist = CONFIG.timinglist;
+      context.difficultylist = CONFIG.difficultylist;
+      context.targetlist = CONFIG.targetlist;
+      context.rangelist = CONFIG.rangelist;
+      context.encroachlist = CONFIG.encroachlist;
+    }
     //console.log(context);
 
     return context;

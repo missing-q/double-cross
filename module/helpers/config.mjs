@@ -1,23 +1,23 @@
-export const BOILERPLATE = {};
+export const DOUBLECROSS = {};
 
 /**
  * The set of Ability Scores used within the sytem.
  * @type {Object}
  */
- BOILERPLATE.abilities = {
-  "str": "BOILERPLATE.AbilityStr",
-  "dex": "BOILERPLATE.AbilityDex",
-  "con": "BOILERPLATE.AbilityCon",
-  "int": "BOILERPLATE.AbilityInt",
-  "wis": "BOILERPLATE.AbilityWis",
-  "cha": "BOILERPLATE.AbilityCha"
+ DOUBLECROSS.abilities = {
+  "str": "DOUBLECROSS.AbilityStr",
+  "dex": "DOUBLECROSS.AbilityDex",
+  "con": "DOUBLECROSS.AbilityCon",
+  "int": "DOUBLECROSS.AbilityInt",
+  "wis": "DOUBLECROSS.AbilityWis",
+  "cha": "DOUBLECROSS.AbilityCha"
 };
 
-BOILERPLATE.abilityAbbreviations = {
-  "str": "BOILERPLATE.AbilityStrAbbr",
-  "dex": "BOILERPLATE.AbilityDexAbbr",
-  "con": "BOILERPLATE.AbilityConAbbr",
-  "int": "BOILERPLATE.AbilityIntAbbr",
-  "wis": "BOILERPLATE.AbilityWisAbbr",
-  "cha": "BOILERPLATE.AbilityChaAbbr"
+DOUBLECROSS.abilityAbbreviations = {
+  "str": "DOUBLECROSS.AbilityStrAbbr",
+  "dex": "DOUBLECROSS.AbilityDexAbbr",
+  "con": "DOUBLECROSS.AbilityConAbbr",
+  "int": "DOUBLECROSS.AbilityIntAbbr",
+  "wis": "DOUBLECROSS.AbilityWisAbbr",
+  "cha": "DOUBLECROSS.AbilityChaAbbr"
 };
