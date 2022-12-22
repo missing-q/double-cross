@@ -1,3 +1,10 @@
 .resource-label {
   font-weight: bold;
+  display:flex;
+  align-items:center;
 }
+.resource-label input {
+  margin: 0 1vw;
+}
+
+/*lol*/
